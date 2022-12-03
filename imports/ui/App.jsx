@@ -8,7 +8,7 @@ import Lobby from './Lobby/Lobby'
 import MyLobby from './MyLobby/MyLobby';
 import Register from './Register/Register';
 import Header from './Header/Header';
-import Chat from './Chat/Chat';
+// import Chat from './Chat/Chat';
 import OtherLobby from './OtherLobby/OtherLobby';
 
 export const App = () => {
@@ -28,7 +28,7 @@ return (
               <Route path="/mylobby" element={<MyLobby />} />
               <Route path="/otherlobby" element={<OtherLobby />} />
             </Routes>
-            <Chat />
+            {/* <Chat /> */}
             </div>
           </Router>
           ) : (
