@@ -35,9 +35,9 @@ Meteor.publish('allUsers', ()=>{
 //   return UserCollection.find();
 // })
 
-// Meteor.publish('userByUsername', ({username}) => {
-//   return UserCollection.find({username});
-// })
+Meteor.publish('userByUsername', ({username}) => {
+  return UserCollection.find({username});
+})
 
 Meteor.startup(async () => {
   if (!Accounts.findUserByUsername(SEED_USERNAME)) {
