@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Meteor } from 'meteor/meteor'
 import { LobbyCollection } from '../../api/lobbyinfo'
 import { useTracker } from 'meteor/react-meteor-data';
@@ -14,7 +14,6 @@ function OtherLobby() {
         Meteor.subscribe('allLobby');
         return LobbyCollection.findOne({'username':`${user.username}`});
     });
-
 
     function moveTracker(index){
         const otherlobbyinfo = LobbyCollection.findOne({'username':`${mylobbyinfo.otherlobby.currentlobby}`});

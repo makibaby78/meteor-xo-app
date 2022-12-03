@@ -3,6 +3,7 @@ import { Accounts } from 'meteor/accounts-base';
 import { LinksCollection } from '/imports/api/links';
 import { LobbyCollection } from '../imports/api/lobbyinfo';
 import { UserCollection } from '../imports/api/userinfo';
+import { ChatCollection } from '../imports/api/chat';
 
 const SEED_USERNAME = 'meteorite';
 const SEED_PASSWORD = 'password';
@@ -12,6 +13,9 @@ async function insertLink({ title, url }) {
   await LinksCollection.insertAsync({ title, url, createdAt: new Date() });
 }
 /* Running */
+Meteor.publish('allChat', ()=>{
+  return ChatCollection.find();
+})
 Meteor.publish('allLobby', ()=>{
   return LobbyCollection.find();
 })
@@ -31,9 +35,9 @@ Meteor.publish('allUsers', ()=>{
 //   return UserCollection.find();
 // })
 
-Meteor.publish('userByUsername', ({username}) => {
-  return UserCollection.find({username});
-})
+// Meteor.publish('userByUsername', ({username}) => {
+//   return UserCollection.find({username});
+// })
 
 Meteor.startup(async () => {
   if (!Accounts.findUserByUsername(SEED_USERNAME)) {

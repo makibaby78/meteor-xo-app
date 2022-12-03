@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Meteor } from 'meteor/meteor'
 import { LobbyCollection } from '../../api/lobbyinfo'
 import { useTracker } from 'meteor/react-meteor-data';

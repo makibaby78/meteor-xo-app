@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Meteor } from 'meteor/meteor'
 import { Accounts } from 'meteor/accounts-base';
 import { Link, useNavigate  } from 'react-router-dom'
-import { UserCollection } from '/imports/api/links';
 
 function Register() { 
   const [username, setUsername] = useState('');
@@ -18,7 +17,6 @@ function Register() {
 
     Meteor.call('lobby.insert', { username:username, firstname:firstname, lastname:lastname, lobby: false, opponent: null, board: Array(9).fill(null)})
     
-    // LobbyCollection.insert({ username: username, name: `${firstname} ${lastname}`, lobby: false, opponent: null});
     Accounts.createUser({
       username: username,
       password: password,
